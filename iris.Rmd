@@ -1,0 +1,27 @@
+---
+title: "Iris"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Data understanding
+
+First of all, we had an overlook on the data in the dataset: we have 5 variables, 4 of which are numerical refering to size, and the remaining one refers to the flower species:
+
+```{r iris}
+summary(iris)
+```
+
+To make it more visual and easy to digest we'll plot this information into graphs:
+
+```{r iris2, echo=FALSE}
+ggplot(iris, aes(x = iris$Sepal.Width)) + geom_histogram(stat_bin(bins=30)) 
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
